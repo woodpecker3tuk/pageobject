@@ -1,3 +1,5 @@
+from selenium.webdriver.common.by import By
+
 from test_project.page.add_member import AddNumber
 from test_project.page.base_page import BasePage
 from test_project.page.contact_page import ContactPage
@@ -9,6 +11,7 @@ class MainPage(BasePage):
         return ContactPage(self.driver)
 
     def go_to_add_number(self):
+        self.driver.find_element(By.CSS_SELECTOR,"[node-type='addmember']").click()
         return AddNumber(self.driver)
 
 
